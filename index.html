@@ -6,6 +6,7 @@
                 margin: 0;
                 padding: 0;
                 overflow-x: hidden;
+                overflow-y: hidden;
                 font-family: "Arial Rounded MT Bold";
                 color: aliceblue;
                 text-shadow: 0px 0px 2dvh blue, 0px 0px 1dvh blue, 0px 0px 7dvh blue;
@@ -15,9 +16,10 @@
                 background-position: center;
                 background-size: cover;
                 background-color: cyan;
+                
             }
 
-            h1{
+            h2{
                 font-size: x-large;
             }
 
@@ -26,35 +28,144 @@
                 src: url("fonts/ARLRDBD.TTF") format("truetype");
             }
 
+            .nav {
+                z-index: 80;
+                width: 8%;            
+                aspect-ratio: 7 / 4;
+                background-color: none;
+                position: absolute;
+                cursor: pointer;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-image: url(images/Button.png);
+                background-position: center;
+                background-size: cover;
+                animation: Cpulse 2s backwards infinite;
+                animation-timing-function: linear;
+            }
+
+        .nav h2 {
+            font-size: clamp(0.4rem, 1.5vw, 1.5rem);
+            margin: 0;
+        }
+
+            #about{
+                top: 90%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            #inst{
+                top: 5%;
+                left: 20%;
+            }
+
+            #books{
+                top: 5%;
+                right: 20%;
+            }
+
+            #illustration{
+                top: 35%;
+                left: 15%;
+            }
+
+            #web{
+                top: 35%;
+                right: 15%;
+            }
+
+            #comics{
+                top: 65%;
+                left: 20%;
+            }
+
+            #video{
+                top: 65%;
+                right: 20%;
+            }
+
             #hero{
                 width: 100vw;
-                height: 97vh;
+                height: 100vh;
                 position: absolute;
                 top: 0%;
                 left: 0%;
                 z-index: 10;
                 background-color: none;
-                background-image: url(images/portfolio_web_HERO._FLATiMAGE.png);
+                background-image: url(images/portfolio_web_HERO._FLATiMAGE_redux.png);
                 background-position: center;
                 background-size: cover;
+                animation: pulse 4s backwards infinite;
+                animation-timing-function: linear;
                 cursor: pointer;
             }
+
+            @keyframes pulse {
+                0%, 100% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(0.98); /* Scales up by a subtle 4% */
+                }
+                
+            }
+
+            @keyframes Cpulse {
+                0% { filter: hue-rotate(0deg); }
+                50%   {  filter: hue-rotate(360deg); }
+                100% {  filter: hue-rotate(0deg); }
+        }  
+
             #scroll{
                 width: 100vw;
                 height: 300dvh;
                 position: absolute;
-                top: 120%;
+                top: 100%;
                 left: 0%;
                 z-index: 1;
                 background-color: none;
             }
 
+        /* Desktop / wide viewport */
+@media (min-aspect-ratio: 1067 / 776) {
+    html, body {
+        overflow: hidden;
+    }
+
+    .nav {
+        display: flex;
+    }
+}
+
+/* Narrow / mobile viewport */
+@media (max-aspect-ratio: 1066 / 776) {
+    html, body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .nav {
+        display: none;
+    }
+}
+    
         </style>
     </head>
 <body>
+    <div class="nav" id="about"><h2>about</h2></div>
+    <div class="nav" id="inst"><h2>fine art</h2></div>
+    <div class="nav" id="books"><h2>books</h2></div>
+    <div class="nav" id="illustration"><h2>drawing</h2></div>
+    <div class="nav" id="web"><h2>web</h2></div>
+    <div class="nav" id="comics"><h2>comics</h2></div>
+    <!--the comics and books can merge into books
+    and this later can become a store page-->
+    <div class="nav" id="video"><h2>video</h2></div>
     <div id="hero"></div>
     <div id="scroll"><h1>
-        not DVH but vh, 97vh implemented<br>
         idea for portfolio website:<br>
 hero image* centered to fit viewport height.<br> 
 this way it fits on mobile,<br>
