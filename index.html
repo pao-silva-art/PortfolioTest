@@ -10,7 +10,7 @@
                 font-family: "Arial Rounded MT Bold";
                 color: aliceblue;
                 text-shadow: 0px 0px 2dvh blue, 0px 0px 1dvh blue, 0px 0px 7dvh blue;
-                height: 400dvh;
+                height: 400vh;
                 width: 100%;
                 background-image: url(images/portfolio_BG.png);
                 background-position: center;
@@ -95,7 +95,7 @@
                 left: 0%;
                 z-index: 10;
                 background-color: none;
-                background-image: url(images/portfolio_web_HERO._FLATiMAGE_redux.png);
+                background-image: url(images/portfolio_web_HERO._FLATiMAGE.png);
                 background-position: center;
                 background-size: cover;
                 animation: pulse 4s backwards infinite;
@@ -129,7 +129,7 @@
                 background-color: none;
             }
 
-        /* Desktop / wide viewport */
+/* Desktop / wide viewport */
 @media (min-aspect-ratio: 1067 / 776) {
     html, body {
         overflow: hidden;
@@ -151,6 +151,24 @@
         display: none;
     }
 }
+
+/* iPhone / mobile landscape */
+@media (orientation: landscape) and (max-aspect-ratio: 1066 / 776) {
+    #scroll {
+        display: none;
+    }
+}
+
+@media (orientation: landscape) and (max-aspect-ratio: 1066 / 776) {
+    html, body {
+        overflow: hidden;
+    }
+
+    #scroll {
+        display: none;
+    }
+}
+
     
         </style>
     </head>
