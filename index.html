@@ -49,6 +49,12 @@
                 src: url("fonts/ARLRDBD.TTF") format("truetype");
             }
 
+            @keyframes cOrbit {
+                0% {  transform: translateX(-50%) scale(1); }
+                50%   {  transform: translateX(-50%) scale(1.5); }
+                100% {  transform: translateX(-50%) scale(1); }
+            }
+            
             @keyframes orbit {
                 from {  -webkit-transform: rotate(0deg) translateX(20px) rotate(0deg); }
                 to   {  -webkit-transform: rotate(360deg) translateX(20px) rotate(-360deg); }
@@ -249,18 +255,20 @@
             #iA-01{
                 position: absolute;
                 height: 40%;
-                left: 20%;
+                left: 50%;
+                transform: translateX(-50%);
                 top: 7%;
-                animation: orbit 0.5s forwards infinite;
+                animation: cOrbit 5s forwards infinite;
                 animation-timing-function: linear;
             }
 
             #iA-02{
                 position: absolute;
                 height: 50%;
-                right: 30%;
+                transform: translateX(-50%);
+                left: 50%;
                 top: 47%;
-                animation: orbit 1s backwards infinite;
+                animation: cOrbit 1s backwards infinite;
                 animation-timing-function: linear;
             }
 
