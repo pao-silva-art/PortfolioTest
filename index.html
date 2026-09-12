@@ -9,7 +9,7 @@
                 font-family: "Arial Rounded MT Bold";
                 color: aliceblue;
                 text-shadow: 0px 0px 2dvh blue, 0px 0px 1dvh blue, 0px 0px 3dvh blue;
-                height: 400vh;
+                height: 380vh;
                 width: 100%;
                 background-image: url(images/portfolio_BG.png);
                 background-position: center;
@@ -21,7 +21,13 @@
             h2{
                 margin: 0;
                 padding: 0;
-                font-size: x-large;
+                font-size: 1.5em;
+            }
+
+            h1{
+                margin: 0;
+                padding: 0;
+                font-size: 0.5em;
             }
 
             @font-face {
@@ -58,7 +64,7 @@
         }
 
             #about{
-                top: 375%;
+                top: 285%;
                 left: 50%;
                 transform: translateX(-50%);
             }
@@ -105,10 +111,25 @@
                 height: 8vh;
                 background-color: none;
                 z-index: 200;
-                direction: ltr;
                 display: flex;
                 align-items: center;
-                justify-content: center;
+            }
+
+            .scrolling-text {
+                display: inline-block;
+                padding-left: 100%;
+                flex-shrink: 0;
+                white-space: nowrap;
+                animation: scrollBanner 18s linear infinite;
+            }
+
+            @keyframes scrollBanner {
+                from {
+                    transform: translateX(0%);
+                }
+                to {
+                    transform: translateX(-100%);
+                }
             }
 
             #hero{
@@ -149,8 +170,8 @@
             #fA-02{
                 position: absolute;
                 height: 35%;
-                left: 5%;
-                top: 25%;
+                left: 20%;
+                top: 30%;
                 animation: orbit 1s forwards infinite;
                 animation-timing-function: linear;
             }
@@ -158,7 +179,7 @@
             #fA-03{
                 position: absolute;
                 height: 35%;
-                right: 5%;
+                right: 20%;
                 top: 50%;
                 animation: orbit 4s forwards infinite;
                 animation-timing-function: linear;
@@ -186,7 +207,7 @@
             #wA-02{
                 position: absolute;
                 height: 35%;
-                left: 6%;
+                left: 20%;
                 top: 25%;
                 animation: orbit 1s forwards infinite;
                 animation-timing-function: linear;
@@ -195,7 +216,7 @@
             #wA-03{
                 position: absolute;
                 height: 35%;
-                right: 5%;
+                right: 20%;
                 top: 50%;
                 animation: orbit 4s forwards infinite;
                 animation-timing-function: linear;
@@ -213,17 +234,17 @@
 
             #iA-01{
                 position: absolute;
-                height: 35%;
-                left: 30%;
+                height: 40%;
+                left: 20%;
                 top: 7%;
-                animation: orbit 4s forwards infinite;
+                animation: orbit 0.5s forwards infinite;
                 animation-timing-function: linear;
             }
 
             #iA-02{
                 position: absolute;
                 height: 50%;
-                left: 30%;
+                right: 30%;
                 top: 47%;
                 animation: orbit 1s backwards infinite;
                 animation-timing-function: linear;
@@ -301,6 +322,22 @@
                 100% {  filter: hue-rotate(0deg); }
         }  
 
+        #aboutSection {
+                position: absolute;
+                background-color: none;
+                top: 295%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100vw;
+                height: 60vh;
+            }
+        
+        #aboutSection h2{
+            padding: 2%;
+            margin: 2%;
+            text-align: center;
+            
+        }
             #scroll{
                 width: 100vw;
                 height: 300dvh;
@@ -311,27 +348,87 @@
                 background-color: none;
             }
 
+            #contact,
+            #instagram {
+                z-index: 80;
+                height: 7%;           
+                aspect-ratio: 12 / 4;
+                background-color: none;
+                position: absolute;
+                cursor: pointer;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-image: url(images/buttonGEN.png);
+                background-position: center;
+                background-size: cover;
+                animation: Cpulse 2s backwards infinite;
+            }
+
+            #contact:hover,
+            #instagram:hover {
+                opacity: 50%;
+            }
+
+            #contact  { top: 360%; left: 10%;}
+            #instagram  { top: 360%; right: 10%;} 
+
+            #contact img,
+            #instagram img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            #instagram h2,
+               #contact h2
+               {
+                    color: white;    
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    margin: 0;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 1em;
+                    pointer-events: none;
+                }
     
         </style>
     </head>
 <body>
-    <marquee id="bio"><h2>Pao Silva Lizárraga is an illustrator, animator, and
-artist from Tijuana, Mexico. cultural imperialism on the internet, melodrama, obsession, and the border between scary and cute.</h2></marquee>
+    <div id="bio">
+    <div class="scrolling-text">
+        <h2>
+            Pao Silva Lizárraga is an illustrator, animator, and artist from Tijuana, Mexico. 
+            Their work depicts cultural imperialism on the internet, melodrama, obsession, 
+            and the border between scary and cute.
+        </h2>
+    </div>
+</div>
     <div class="nav" id="about"><h2>about</h2></div>
+        <div id="aboutSection">
+            <h2>
+                My work reflects my cultural experience of interacting with America through strip malls and commerce, while living in Tijuana, Mexico. Through web art, paintings, and illustration, I depict the digital and physical advertisements I saw as a border-dweller, promising me the chance to de-Mexicanize. No matter the finished look, I always start with pencil and paper. I use pixels to represent power. 
+            </h2>
+        </div>
     <div class="nav" id="inst"><h2>fine art</h2></div>
     <div id="fineArt">
         <img src="images/fineArt_01.png" id="fA-01">
         <img src="images/fineArt_02.png" id="fA-02">
         <img src="images/fineArt_03.png" id="fA-03">
     </div>
-    <div class="nav" id="books"><h2>books</h2></div>
+    <!--<div class="nav" id="books"><h2>books</h2></div>
         <div id="bookArt">
             <img src="images/book_01.png" id="bA-01">
             <img src="images/book_02.png" id="bA-02">
             <img src="images/book_03.png" id="bA-03">
             <img src="images/book_04.png" id="bA-04">
             <img src="images/book_05.png" id="bA-05">
-        </div>
+        </div>-->
     <div class="nav" id="illustration"><h2>drawing</h2></div>
         <div id="illusArt">
             <a href="https://paosilvalizarraga.cargo.site/">
@@ -370,7 +467,16 @@ or bottom of main graphic <br>
 top include 4 buttons <br>
 section for illustrations to lead to dif page<br>
 cv/about button lead to another page<br>-->
-
+ <a href= "mailto:pao.silva.art@gmail.com">
+        <div id="contact">
+            <h2>contact</h2>
+        </div>
+        </a>
+    <a href="https://www.instagram.com/pao.la.silva/?next=">
+        <div id="instagram">
+            <h2>instagram</h2>
+        </div>
+    </a>
 
     </h1></div>
 </body>
