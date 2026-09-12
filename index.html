@@ -6,10 +6,9 @@
                 margin: 0;
                 padding: 0;
                 overflow-x: hidden;
-                overflow-y: hidden;
                 font-family: "Arial Rounded MT Bold";
                 color: aliceblue;
-                text-shadow: 0px 0px 2dvh blue, 0px 0px 1dvh blue, 0px 0px 7dvh blue;
+                text-shadow: 0px 0px 2dvh blue, 0px 0px 1dvh blue, 0px 0px 3dvh blue;
                 height: 400vh;
                 width: 100%;
                 background-image: url(images/portfolio_BG.png);
@@ -20,6 +19,8 @@
             }
 
             h2{
+                margin: 0;
+                padding: 0;
                 font-size: x-large;
             }
 
@@ -28,9 +29,14 @@
                 src: url("fonts/ARLRDBD.TTF") format("truetype");
             }
 
+            @keyframes orbit {
+                from {  -webkit-transform: rotate(0deg) translateX(20px) rotate(0deg); }
+                to   {  -webkit-transform: rotate(360deg) translateX(20px) rotate(-360deg); }
+            }
+
             .nav {
                 z-index: 80;
-                width: 8%;            
+                height: 10%;            
                 aspect-ratio: 7 / 4;
                 background-color: none;
                 position: absolute;
@@ -47,34 +53,38 @@
             }
 
         .nav h2 {
-            font-size: clamp(0.4rem, 1.5vw, 1.5rem);
+
             margin: 0;
         }
 
             #about{
-                top: 90%;
+                top: 375%;
                 left: 50%;
                 transform: translateX(-50%);
             }
 
             #inst{
-                top: 5%;
-                left: 20%;
+                top: 105%;
+                left: 50%;
+                transform: translateX(-50%);
             }
 
             #books{
-                top: 5%;
-                right: 20%;
+                top: 285%;
+                left: 50%;
+                transform: translateX(-50%);
             }
 
             #illustration{
-                top: 35%;
-                left: 15%;
+                top: 225%;
+                left: 50%;
+                transform: translateX(-50%);
             }
 
             #web{
-                top: 35%;
-                right: 15%;
+                top: 165%;
+                left: 50%;
+                transform: translateX(-50%);
             }
 
             #comics{
@@ -87,11 +97,25 @@
                 right: 20%;
             }
 
+            #bio {
+                position: absolute;
+                top: 0%;
+                right: 0%;
+                width: 100vw;
+                height: 8vh;
+                background-color: none;
+                z-index: 200;
+                direction: ltr;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
             #hero{
                 width: 100vw;
                 height: 100vh;
                 position: absolute;
-                top: 0%;
+                top: 5%;
                 left: 0%;
                 z-index: 10;
                 background-color: none;
@@ -102,6 +126,164 @@
                 animation-timing-function: linear;
                 cursor: pointer;
             }
+
+            #fineArt {
+                position: absolute;
+                background-color: none;
+                top: 115%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100vw;
+                height: 50vh;
+            }
+
+            #fA-01{
+                position: absolute;
+                height: 30%;
+                left: 40%;
+                top: 5%;
+                animation: orbit 2s backwards infinite;
+                animation-timing-function: linear;
+            }
+
+            #fA-02{
+                position: absolute;
+                height: 35%;
+                left: 5%;
+                top: 25%;
+                animation: orbit 1s forwards infinite;
+                animation-timing-function: linear;
+            }
+
+            #fA-03{
+                position: absolute;
+                height: 35%;
+                right: 5%;
+                top: 50%;
+                animation: orbit 4s forwards infinite;
+                animation-timing-function: linear;
+            }
+
+            #webArt {
+                position: absolute;
+                background-color: none;
+                top: 175%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100vw;
+                height: 50vh;
+            }
+
+            #wA-01{
+                position: absolute;
+                height: 40%;
+                left: 40%;
+                top: 5%;
+                animation: orbit 2s backwards infinite;
+                animation-timing-function: linear;
+            }
+
+            #wA-02{
+                position: absolute;
+                height: 35%;
+                left: 6%;
+                top: 25%;
+                animation: orbit 1s forwards infinite;
+                animation-timing-function: linear;
+            }
+
+            #wA-03{
+                position: absolute;
+                height: 35%;
+                right: 5%;
+                top: 50%;
+                animation: orbit 4s forwards infinite;
+                animation-timing-function: linear;
+            }
+
+            #illusArt {
+                position: absolute;
+                background-color: none;
+                top: 235%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100vw;
+                height: 50vh;
+            }
+
+            #iA-01{
+                position: absolute;
+                height: 35%;
+                left: 30%;
+                top: 7%;
+                animation: orbit 4s forwards infinite;
+                animation-timing-function: linear;
+            }
+
+            #iA-02{
+                position: absolute;
+                height: 50%;
+                left: 30%;
+                top: 47%;
+                animation: orbit 1s backwards infinite;
+                animation-timing-function: linear;
+            }
+
+            #bookArt {
+                position: absolute;
+                background-color: none;
+                top: 295%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100vw;
+                height: 80vh;
+            }
+
+            #bA-01{
+                position: absolute;
+                height: 25%;
+                left: 40%;
+                top: 1%;
+                animation: orbit 2s backwards infinite;
+                animation-timing-function: linear;
+            }
+
+            #bA-02{
+                position: absolute;
+                height: 25%;
+                left: 6%;
+                top: 20%;
+                animation: orbit 1s forwards infinite;
+                animation-timing-function: linear;
+            }
+
+            #bA-03{
+                position: absolute;
+                height: 25%;
+                right: 8%;
+                top: 28%;
+                animation: orbit 4s forwards infinite;
+                animation-timing-function: linear;
+            }
+
+            #bA-04{
+                position: absolute;
+                height: 25%;
+                right: 8%;
+                top: 60%;
+                animation: orbit 0.5s forwards infinite;
+                animation-timing-function: linear;
+            }
+
+            #bA-05{
+                position: absolute;
+                height: 25%;
+                left: 8%;
+                top: 60%;
+                animation: orbit 5s backwards infinite;
+                animation-timing-function: linear;
+            }
+            
 
             @keyframes pulse {
                 0%, 100% {
@@ -129,61 +311,47 @@
                 background-color: none;
             }
 
-/* Desktop / wide viewport */
-@media (min-aspect-ratio: 1067 / 776) {
-    html, body {
-        overflow: hidden;
-    }
-
-    .nav {
-        display: flex;
-    }
-}
-
-/* Narrow / mobile viewport */
-@media (max-aspect-ratio: 1066 / 776) {
-    html, body {
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-
-    .nav {
-        display: none;
-    }
-}
-
-/* iPhone / mobile landscape */
-@media (orientation: landscape) and (max-aspect-ratio: 1066 / 776) {
-    #scroll {
-        display: none;
-    }
-}
-
-@media (orientation: landscape) and (max-aspect-ratio: 1066 / 776) {
-    html, body {
-        overflow: hidden;
-    }
-
-    #scroll {
-        display: none;
-    }
-}
-
     
         </style>
     </head>
 <body>
-    <!--<div class="nav" id="about"><h2>about</h2></div>-->
+    <marquee id="bio"><h2>Pao Silva Lizárraga is an illustrator, animator, and
+artist from Tijuana, Mexico. cultural imperialism on the internet, melodrama, obsession, and the border between scary and cute.</h2></marquee>
+    <div class="nav" id="about"><h2>about</h2></div>
     <div class="nav" id="inst"><h2>fine art</h2></div>
+    <div id="fineArt">
+        <img src="images/fineArt_01.png" id="fA-01">
+        <img src="images/fineArt_02.png" id="fA-02">
+        <img src="images/fineArt_03.png" id="fA-03">
+    </div>
     <div class="nav" id="books"><h2>books</h2></div>
+        <div id="bookArt">
+            <img src="images/book_01.png" id="bA-01">
+            <img src="images/book_02.png" id="bA-02">
+            <img src="images/book_03.png" id="bA-03">
+            <img src="images/book_04.png" id="bA-04">
+            <img src="images/book_05.png" id="bA-05">
+        </div>
     <div class="nav" id="illustration"><h2>drawing</h2></div>
+        <div id="illusArt">
+            <a href="https://paosilvalizarraga.cargo.site/">
+            <img src="images/drawing_01.png" id="iA-01"></a>
+            <img src="images/drawing_02.png" id="iA-02">
+        </div>
     <div class="nav" id="web"><h2>web</h2></div>
-    <div class="nav" id="comics"><h2>about</h2></div>
-    <!--the comics and books can merge into books
-    and this later can become a store page-->
-    <div class="nav" id="video"><h2>video</h2></div>
+    <div id="webArt">
+        <a href="https://iwanttogotothemall.com">
+            <img src="images/webArt_03.png" id="wA-01">
+        </a>
+        <img src="images/webArt_02.png" id="wA-02">
+        <img src="images/webArt_01.png" id="wA-03">
+    </div>
+    <!--<div class="nav" id="comics"><h2>about</h2></div>
+    the comics and books can merge into books
+    and this later can become a store page
+    <div class="nav" id="video"><h2>video</h2></div>-->
     <div id="hero"></div>
-    <div id="scroll"><h1>
+    <!--<div id="scroll"><h1>
         idea for portfolio website:<br>
 hero image* centered to fit viewport height.<br> 
 this way it fits on mobile,<br>
@@ -201,7 +369,7 @@ short statement can go on top as a scroll<br>
 or bottom of main graphic <br>
 top include 4 buttons <br>
 section for illustrations to lead to dif page<br>
-cv/about button lead to another page<br>
+cv/about button lead to another page<br>-->
 
 
     </h1></div>
